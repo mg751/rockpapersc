@@ -20,36 +20,48 @@ function playerInput() {
         } else return "Please type rock, paper or scissors";
     }
 
+ let roundResult = 0;
+    
 function game(){
     let computerPlay = computerCalculation();
     let humanPlay = playerInput();
         if (computerPlay == humanPlay){
              console.log (`Draw. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
-             return 0;
+             roundResult = roundResult + 0;
+             return (roundResult);
 
         } else if (computerPlay == "rock" && humanPlay == "scissors"){
              console.log (`Lose. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
-             return -1;
+             roundResult = roundResult - 1;
+             return (roundResult);
 
         } else if (computerPlay == "paper" && humanPlay == "scissors"){
              console.log (`Win. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
-             return 1;
+             roundResult = roundResult + 1;
+             return (roundResult);
 
         } else if (computerPlay == "rock" && humanPlay == "paper"){
              console.log (`Win. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
-             return 1;
+             roundResult = roundResult + 1;
+             return (roundResult);
 
         } else if (computerPlay == "paper" && humanPlay == "rock"){
              console.log (`Lose. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
-             return -1;
+             roundResult = roundResult -1;
+             return (roundResult);
+
 
         } else if (computerPlay == "scissors" && humanPlay == "rock"){
              console.log (`Win. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
-             return 1;
+             roundResult = roundResult + 1;
+             return (roundResult);
+
 
         } else if (computerPlay == "scissors" && humanPlay == "paper"){
              console.log (`Lose. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
-             return -1;
+             roundResult = roundResult - 1;
+             return (roundResult);
+
 
         }   else  console.log(humanPlay)
         }
@@ -62,9 +74,9 @@ function fullGame(rounds=5){
                 alert("Please enter a number");
             } else {
             for (let i = 0; i < rounds; i++) {
-                console.log(game());
-                    }
+                game();
             }
         }
+    }
 
 fullGame();
