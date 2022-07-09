@@ -24,29 +24,47 @@ function game(){
     let computerPlay = computerCalculation();
     let humanPlay = playerInput();
         if (computerPlay == humanPlay){
-            return `Draw. Human chose ${humanPlay}, Computer chose ${computerPlay}!`;
+             console.log (`Draw. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
+             return 0;
+
         } else if (computerPlay == "rock" && humanPlay == "scissors"){
-            return `Lose. Human chose ${humanPlay}, Computer chose ${computerPlay}!`;
+             console.log (`Lose. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
+             return -1;
+
         } else if (computerPlay == "paper" && humanPlay == "scissors"){
-            return `Win. Human chose ${humanPlay}, Computer chose ${computerPlay}!`;
+             console.log (`Win. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
+             return 1;
+
         } else if (computerPlay == "rock" && humanPlay == "paper"){
-            return `Win. Human chose ${humanPlay}, Computer chose ${computerPlay}!`;
+             console.log (`Win. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
+             return 1;
+
         } else if (computerPlay == "paper" && humanPlay == "rock"){
-            return `Lose. Human chose ${humanPlay}, Computer chose ${computerPlay}!`;
+             console.log (`Lose. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
+             return -1;
+
         } else if (computerPlay == "scissors" && humanPlay == "rock"){
-            return `Win. Human chose ${humanPlay}, Computer chose ${computerPlay}!`;
+             console.log (`Win. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
+             return 1;
+
         } else if (computerPlay == "scissors" && humanPlay == "paper"){
-            return `Lose. Human chose ${humanPlay}, Computer chose ${computerPlay}!`;
-        }   else return(humanPlay)
+             console.log (`Lose. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
+             return -1;
+
+        }   else  console.log(humanPlay)
         }
         
 
 
 function fullGame(rounds=5){
-            rounds = prompt("How many rounds?", "Enter a number")
+            rounds = prompt("How many rounds?", 5)
+            if (isNaN(rounds) == 1){
+                alert("Please enter a number");
+            } else {
             for (let i = 0; i < rounds; i++) {
                 console.log(game());
+                    }
+            }
         }
-}
 
 fullGame();
