@@ -76,7 +76,16 @@ function fullGame(rounds=5){
             for (let i = 0; i < rounds; i++) {
                 game();
             }
-        }
-    }
+            }
+            let absoluteScore = Math.abs(roundResult);
+            console.log(`Your score is ${roundResult}!`);
+            if (roundResult < 0){
+                console.log(`You lose! Computer beat you by ${absoluteScore} rounds`);
+                } else if (roundResult == 0) {
+                console.log("Draw");
+                } else {
+                console.log(`You win! You beat computer by ${absoluteScore} rounds`);
+                }
+            }
 
 fullGame();
