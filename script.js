@@ -55,13 +55,15 @@ function game(){
         }
     
         if (roundResult === 3) {
-            document.querySelector("#score").textContent = `You win!`;
+            document.querySelector("#score").textContent = `You won 3 times!`;
             document.querySelector("#score").style.fontSize = "40px";
             roundResult = 0;
+            return roundResult;
         } else if (roundResult === -3) {
-            document.querySelector("#score").textContent = `You lose!`;
+            document.querySelector("#score").textContent = `You lost 3 times!`;
             document.querySelector("#score").style.fontSize = "40px";
             roundResult = 0;
+            return roundResult;
         } else {
             document.querySelector("#score").textContent = `The current score is ${roundResult}`;
             return roundResult;
