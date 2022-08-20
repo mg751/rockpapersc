@@ -67,6 +67,34 @@ function game(){
         }
         
 
+// first select the different buttons
+
+const playerRock = document.getElementById("rock");
+const playerPaper = document.getElementById("paper");
+const playerScissors = document.getElementById("scissors");
+
+// add event listener on click 
+
+playerRock.addEventListener("click", game);
+playerPaper.addEventListener("click", game);
+playerScissors.addEventListener("click", game);
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+// full game //        
 
 function fullGame(rounds=5){
             rounds = prompt("How many rounds?", 5)
@@ -87,5 +115,3 @@ function fullGame(rounds=5){
                 console.log(`You win! You beat computer by ${absoluteScore} rounds`);
                 }
             }
-
-fullGame();
