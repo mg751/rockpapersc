@@ -1,5 +1,4 @@
-#buttons,
-#results {
+#buttons {
     display: flex;
     justify-content: center;
 }
@@ -7,4 +6,11 @@
 button {
     width: 100px;
     height: 70px;
+}
+
+#results {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
 }

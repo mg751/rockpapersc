@@ -1,8 +1,5 @@
 let playerChoice = null;
 
-
-
-
 function getRandom() {
     return Math.random();
 }
@@ -19,59 +16,59 @@ function computerCalculation(){
 function playerInput() {
     let playerAnswer = playerChoice.toString();
     let lowercaseAnswer = playerChoice.toLowerCase();
-        
-        if (["rock","paper","scissors"].includes(lowercaseAnswer)) {
-            return lowercaseAnswer;
-        } else return "Please type rock, paper or scissors";
-    }
+    return lowercaseAnswer;
+}
 
- let roundResult = 0;
+let roundResult = 0;
     
 function game(){
     let computerPlay = computerCalculation();
     let humanPlay = playerInput();
+    document.querySelector("#score").style.fontSize = "16px";
         if (computerPlay == humanPlay){
-             document.querySelector("#results p").textContent = (`Draw. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
+             document.querySelector("#summary").textContent = (`Draw. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
              roundResult = roundResult + 0;
-             return roundResult;
 
         } else if (computerPlay == "rock" && humanPlay == "scissors"){
-             document.querySelector("#results p").textContent = (`Lose. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
+             document.querySelector("#summary").textContent = (`Lose. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
              roundResult = roundResult - 1;
-             return roundResult;
 
         } else if (computerPlay == "paper" && humanPlay == "scissors"){
-             document.querySelector("#results p").textContent = (`Win. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
+             document.querySelector("#summary").textContent = (`Win. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
              roundResult = roundResult + 1;
-             return roundResult;
 
         } else if (computerPlay == "rock" && humanPlay == "paper"){
-             document.querySelector("#results p").textContent = (`Win. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
+             document.querySelector("#summary").textContent = (`Win. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
              roundResult = roundResult + 1;
-             return roundResult;
 
         } else if (computerPlay == "paper" && humanPlay == "rock"){
-             document.querySelector("#results p").textContent = (`Lose. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
+             document.querySelector("#summary").textContent = (`Lose. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
              roundResult = roundResult -1;
-             return roundResult;
-
 
         } else if (computerPlay == "scissors" && humanPlay == "rock"){
-             document.querySelector("#results p").textContent = (`Win. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
+             document.querySelector("#summary").textContent = (`Win. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
              roundResult = roundResult + 1;
-             return roundResult;
-
 
         } else if (computerPlay == "scissors" && humanPlay == "paper"){
-             document.querySelector("#results p").textContent = (`Lose. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
+             document.querySelector("#summary").textContent = (`Lose. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
              roundResult = roundResult - 1;
-             return roundResult;
-
-
-        }   else  console.log(humanPlay)
-
+        }
+    
+        if (roundResult === 3) {
+            document.querySelector("#score").textContent = `You win!`;
+            document.querySelector("#score").style.fontSize = "40px";
+            roundResult = 0;
+        } else if (roundResult === -3) {
+            document.querySelector("#score").textContent = `You lose!`;
+            document.querySelector("#score").style.fontSize = "40px";
+            roundResult = 0;
+        } else {
+            document.querySelector("#score").textContent = `The current score is ${roundResult}`;
+            return roundResult;
+    }
+    
 }
-        
+
 
 
 // function to return id 
