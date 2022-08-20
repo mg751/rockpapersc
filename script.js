@@ -1,3 +1,5 @@
+let playerChoice = null;
+
 function getRandom() {
     return Math.random();
 }
@@ -12,8 +14,8 @@ function computerCalculation(){
 }
 
 function playerInput() {
-    let playerAnswer = prompt("Your choice","type here");
-    let lowercaseAnswer = playerAnswer.toLowerCase();
+    let playerAnswer = playerChoice.toString();
+    let lowercaseAnswer = playerChoice.toLowerCase();
         
         if (["rock","paper","scissors"].includes(lowercaseAnswer)) {
             return lowercaseAnswer;
@@ -67,31 +69,19 @@ function game(){
         }
         
 
-// first select the different buttons
 
-const playerRock = document.getElementById("rock");
-const playerPaper = document.getElementById("paper");
-const playerScissors = document.getElementById("scissors");
+// function to return id 
 
-// add event listener on click 
+function startGame(){
+        playerChoice = this.id;
+        return game();
+}
 
-playerRock.addEventListener("click", game);
-playerPaper.addEventListener("click", game);
-playerScissors.addEventListener("click", game);
+// select and add event listener to buttons
 
-
-
-
-
-
-
-
-
-
-
-
-
-
+const chooseRock = document.getElementById("rock").addEventListener("click", startGame);
+const choosePaper = document.getElementById("paper").addEventListener("click", startGame);
+const chooseScissors = document.getElementById("scissors").addEventListener("click", startGame);
 
 
 // full game //        

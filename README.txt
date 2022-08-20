@@ -27,3 +27,31 @@ C. Rounds.
     1. Create function that calls game() function for an X 
     number of times
     2. I got lazy and started experimenting rather than writing
+
+
+
+
+
+
+
+
+// new game!
+
+1. Player clicks a button
+2. Player choice is saved
+3. Run game
+    3.1 Reset the player choice after running
+4. Reset player choice
+
+
+
+
+
+
+
+
+
+
+
+
+
