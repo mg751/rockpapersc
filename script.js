@@ -1,5 +1,8 @@
 let playerChoice = null;
 
+
+
+
 function getRandom() {
     return Math.random();
 }
@@ -28,45 +31,46 @@ function game(){
     let computerPlay = computerCalculation();
     let humanPlay = playerInput();
         if (computerPlay == humanPlay){
-             console.log (`Draw. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
+             document.querySelector("#results p").textContent = (`Draw. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
              roundResult = roundResult + 0;
-             return (roundResult);
+             return roundResult;
 
         } else if (computerPlay == "rock" && humanPlay == "scissors"){
-             console.log (`Lose. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
+             document.querySelector("#results p").textContent = (`Lose. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
              roundResult = roundResult - 1;
-             return (roundResult);
+             return roundResult;
 
         } else if (computerPlay == "paper" && humanPlay == "scissors"){
-             console.log (`Win. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
+             document.querySelector("#results p").textContent = (`Win. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
              roundResult = roundResult + 1;
-             return (roundResult);
+             return roundResult;
 
         } else if (computerPlay == "rock" && humanPlay == "paper"){
-             console.log (`Win. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
+             document.querySelector("#results p").textContent = (`Win. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
              roundResult = roundResult + 1;
-             return (roundResult);
+             return roundResult;
 
         } else if (computerPlay == "paper" && humanPlay == "rock"){
-             console.log (`Lose. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
+             document.querySelector("#results p").textContent = (`Lose. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
              roundResult = roundResult -1;
-             return (roundResult);
+             return roundResult;
 
 
         } else if (computerPlay == "scissors" && humanPlay == "rock"){
-             console.log (`Win. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
+             document.querySelector("#results p").textContent = (`Win. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
              roundResult = roundResult + 1;
-             return (roundResult);
+             return roundResult;
 
 
         } else if (computerPlay == "scissors" && humanPlay == "paper"){
-             console.log (`Lose. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
+             document.querySelector("#results p").textContent = (`Lose. Human chose ${humanPlay}, Computer chose ${computerPlay}!`);
              roundResult = roundResult - 1;
-             return (roundResult);
+             return roundResult;
 
 
         }   else  console.log(humanPlay)
-        }
+
+}
         
 
 
@@ -95,7 +99,7 @@ function fullGame(rounds=5){
                 game();
             }
             }
-            let absoluteScore = Math.abs(roundResult);
+            let absoluteScore = Math.absroundResult;
             console.log(`Your score is ${roundResult}!`);
             if (roundResult < 0){
                 console.log(`You lose! Computer beat you by ${absoluteScore} rounds`);

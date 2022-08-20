@@ -1,4 +1,5 @@
-.buttons {
+#buttons,
+#results {
     display: flex;
     justify-content: center;
 }
